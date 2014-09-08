@@ -72,46 +72,142 @@
  *
  * @ingroup themeable
  */
-?>
-<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
-  <div class="container">
+?><!-- Navigation -->
+<nav class="<?php print $navbar_classes; ?>" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
-      <?php if ($logo): ?>
-      <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-      <?php endif; ?>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <?php if ($logo): ?>
+          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        <?php endif; ?>
 
-      <?php if (!empty($site_name)): ?>
-      <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-      <?php endif; ?>
-
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+        <?php if (!empty($site_name)): ?>
+          <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+        <?php endif; ?>
     </div>
-
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
+    <!-- /.navbar-header -->
+    
+    <?php if (!empty($primary_nav)): ?>
+      <?php print render($primary_nav); ?>
     <?php endif; ?>
-  </div>
-</header>
+    <?php if (!empty($secondary_nav)): ?>
+      <?php print render($secondary_nav); ?>
+    <?php endif; ?>
+    
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <?php if (!empty($page['navigation'])): ?>
+              <?php print render($page['navigation']); ?>
+            <?php endif; ?>
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                    </div>
+                    <!-- /input-group -->
+                </li>
+                <li>
+                    <a class="active" href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="flot.html">Flot Charts</a>
+                        </li>
+                        <li>
+                            <a href="morris.html">Morris.js Charts</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                </li>
+                <li>
+                    <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="panels-wells.html">Panels and Wells</a>
+                        </li>
+                        <li>
+                            <a href="buttons.html">Buttons</a>
+                        </li>
+                        <li>
+                            <a href="notifications.html">Notifications</a>
+                        </li>
+                        <li>
+                            <a href="typography.html">Typography</a>
+                        </li>
+                        <li>
+                            <a href="grid.html">Grid</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Item</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Item</a>
+                        </li>
+                        <li>
+                            <a href="#">Third Level <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-third-level -->
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="blank.html">Blank Page</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Login Page</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
 
 <div class="main-container container">
 

@@ -1,5 +1,5 @@
 name = Mary Jane Bokus
-description = Mary Jane Bokus is a Bootstrap Sub-theme with SB Admin-2 styles
+description = Mary Jane Bokus is a Bootstrap Sub-theme with SB Admin-2 styles integration
 core = 7.x
 base theme = bootstrap
 
@@ -65,3 +65,15 @@ stylesheets[all][] = css/style.css
 ; Method 2 uses BootstrapCDN, the only thing you might need to provide here
 ; is overrides to Bootstrap theme settings. Copy them here from the base theme
 ; to override.
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Theme Settings
+;;;;;;;;;;;;;;;;;;;;;
+
+
+; Navbar
+; --------------
+settings[bootstrap_navbar_position] = 'static-top'
