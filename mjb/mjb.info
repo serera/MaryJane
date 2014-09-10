@@ -26,6 +26,8 @@ regions[page_bottom]    = 'Page bottom'
 
 stylesheets[all][] = css/sb-admin-2.css
 stylesheets[all][] = css/style.css
+;We load font-awesome in html.tpl from maxcdn, not from font-awesome module and libraries
+exclude[css][] = 'sites/all/libraries/fontawesome/css/font-awesome.css'
 
 
 
@@ -66,6 +68,19 @@ stylesheets[all][] = css/style.css
 ; is overrides to Bootstrap theme settings. Copy them here from the base theme
 ; to override.
 
+;;;;;;;;;;;;;;;;;;;;;
+;; SB Admin-2 Scripts
+;;;;;;;;;;;;;;;;;;;;;
+;    <!-- Metis Menu Plugin JavaScript -->
+scripts[] = 'js/plugins/metisMenu/metisMenu.min.js'
+
+;    <!-- Morris Charts JavaScript -->
+scripts[] = 'js/plugins/morris/raphael.min.js'
+scripts[] = 'js/plugins/morris/morris.min.js'
+;scripts[] = 'js/plugins/morris/morris-data.js'
+
+;    <!-- Custom Theme JavaScript -->
+scripts[] = 'js/sb-admin-2.js'
 
 
 
@@ -73,7 +88,68 @@ stylesheets[all][] = css/style.css
 ;; Theme Settings
 ;;;;;;;;;;;;;;;;;;;;;
 
+; Breadcrumbs
+; --------------
+settings[bootstrap_breadcrumb] = 1
+settings[bootstrap_breadcrumb_home] = 0
+settings[bootstrap_breadcrumb_title] = 1
 
 ; Navbar
 ; --------------
 settings[bootstrap_navbar_position] = 'static-top'
+settings[bootstrap_navbar_inverse] = 0
+
+; Region Wells
+; --------------
+settings[bootstrap_region_well-navigation] = ''
+settings[bootstrap_region_well-header] = ''
+settings[bootstrap_region_well-highlighted] = ''
+settings[bootstrap_region_well-help] = ''
+settings[bootstrap_region_well-content] = ''
+settings[bootstrap_region_well-sidebar_first] = ''
+settings[bootstrap_region_well-sidebar_second] = ''
+settings[bootstrap_region_well-footer] = ''
+
+; Anchors
+; --------------
+settings[bootstrap_anchors_fix] = 1
+settings[bootstrap_anchors_smooth_scrolling] = 1
+
+; Popovers
+; --------------
+settings[bootstrap_popover_enabled] = 1
+settings[bootstrap_popover_animation] = 1
+settings[bootstrap_popover_html] = 0
+settings[bootstrap_popover_placement] = 'right'
+settings[bootstrap_popover_selector] = ''
+settings[bootstrap_popover_trigger]['hover'] = 0
+settings[bootstrap_popover_trigger]['focus'] = 0
+settings[bootstrap_popover_trigger]['click'] = 'click'
+settings[bootstrap_popover_title] = ''
+settings[bootstrap_popover_content] = ''
+settings[bootstrap_popover_delay] = 0
+settings[bootstrap_popover_container] = 'body'
+
+; Tooltips
+; --------------
+settings[bootstrap_tooltip_enabled] = 1
+settings[bootstrap_tooltip_descriptions] = 1
+settings[bootstrap_tooltip_animation] = 1
+settings[bootstrap_tooltip_html] = 0
+settings[bootstrap_tooltip_placement] = 'auto left'
+settings[bootstrap_tooltip_selector] = ''
+settings[bootstrap_tooltip_trigger]['hover'] = 'hover'
+settings[bootstrap_tooltip_trigger]['focus'] = 'focus'
+settings[bootstrap_tooltip_trigger]['click'] = 0
+settings[bootstrap_tooltip_delay] = 0
+settings[bootstrap_tooltip_container] = 'body'
+
+; Advanced
+; --------------
+settings[bootstrap_cdn] = 3.2.0
+settings[bootstrap_bootswatch] = ''
+
+; Global
+; --------------
+settings[toggle_name] = 1
+settings[toggle_search] = 1
